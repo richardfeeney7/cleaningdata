@@ -2,21 +2,23 @@
 import numpy as np 
 import pandas as pd 
 
-
-
 # read the csv file into pandas as dataframe
-#df = pd.read_csv("propertydata.csv")
+df = pd.read_csv("propertydata.csv")
 
 # Look at the data lines 0-4
-#print(df.head(5))
+print(df.head(5))
 
 # Standard missing values
-#print (df['ST_NUM'])
-#print (df['ST_NUM'].isnull())
+print (df['ST_NUM'])
+print (df['ST_NUM'].isnull())
 
 # Look at num_bedrooms column
-#print (df['NUM_BEDROOMS'])
-#print (df['NUM_BEDROOMS'].isnull())
+print (df['NUM_BEDROOMS'])
+print (df['NUM_BEDROOMS'].isnull())
+
+print("")
+print("")
+print("")
 
 # Making a list of missing value types
 missing = ["n/a", "na", "--"]
@@ -26,6 +28,7 @@ df = pd.read_csv("propertydata.csv" , na_values = missing)
 print (df['NUM_BEDROOMS'])
 print (df['NUM_BEDROOMS'].isnull())
 
+print("")
 
 # Detecting numbers 
 cnt=0
@@ -42,3 +45,20 @@ for row in df['OWN_OCCUPIED']:
 
     # Total missing values for each feature
 print (df.isnull().sum())
+
+print("")
+
+# Total missing values for each feature
+print (df.isnull().sum())
+
+print("")
+
+# Any missing values?
+print (df.isnull().values.any())
+
+print("")
+
+# Total number of missing values
+print (df.isnull().sum().sum())
+
+
